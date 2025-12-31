@@ -14,7 +14,7 @@ if (isset($_POST['login_btn'])) {
     if (mysqli_num_rows($query_run) == 1) {
         $user = mysqli_fetch_assoc($query_run);
 
-        if (password_verify($password, $user['password'])) { // يقارن مع الباسورد المشفّر [web:106][web:112]
+        if (password_verify($password, $user['password'])) { 
             $_SESSION['auth'] = true;
             $_SESSION['auth_user'] = [
                 'user_id'    => $user['id'],
@@ -61,7 +61,7 @@ include('./include/header.php');
         Login
     </button>
 </form>
-<?php include('./include/footer.php'); ?>
+<?php include('./include/footer.php'); ?> 
 
 
 <?php if(isset($_SESSION['status'])): ?>
